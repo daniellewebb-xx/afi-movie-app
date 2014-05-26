@@ -1,0 +1,87 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Movie App</title>
+	<link rel="stylesheet" href="style.css">
+	<link href='http://fonts.googleapis.com/css?family=Open+Sans:400italic,400,300,600' rel='stylesheet' type='text/css'>
+</head>
+<body>
+	
+	<div class="content clearfix">
+
+		<fieldset class="rateMovie">
+		    <legend>Please rate</legend>
+		    <input type="radio" id="star5" name="rating" value="5">
+		    <label for="star5">5 stars</label>
+
+		    <input type="radio" id="star4" name="rating" value="4">
+		    <label for="star4">4 stars</label>
+
+		    <input type="radio" id="star3" name="rating" value="3">
+		    <label for="star3">3 stars</label>
+
+		    <input type="radio" id="star2" name="rating" value="2">
+		    <label for="star2">2 stars</label>
+
+		    <input type="radio" id="star1" name="rating" value="1">
+		    <label for="star1">1 star</label>
+		</fieldset> <!-- /.ratemovie -->
+
+		<!-- MODAL POPUP -->
+		<div id="openModal" class="modalDialog"> 
+			<div class="modalWrap clearfix">
+				<a href="#close" title="Close" class="close">X</a>
+				<div class="moviePoster">
+					<img src="" class="modalPoster" alt="Movie Poster" />
+					<p class="rating">Rating to come</p>
+				</div>
+				<div class="movieDetails">
+					<h3>Num. Film Title (Year)</h3>
+					<p class="plot">Lorem ipsum</p>
+					<p class="review">Our 100 words: Review to come.</p>
+				</div>
+			</div>
+		</div> <!-- / MODAL POPUP -->
+
+	</div> <!-- /.content -->
+
+	<div class="sidebar">
+		<div class="header">
+			<h1><span>American Film Institute</span> Top 100 in 100</h1>
+			<h2 class="tagline">One hundred words on the one hundred greatest films of all time</h2>
+		</div>
+		<nav>
+			<!-- <li><a href="#">Watched</a></li> -->
+			<!-- <li><a href="#">Coming Soon</a></li> -->
+			<li><a href="#about">About</a></li>
+			<li><a href="#contact">Contact</a></li>
+		</nav>
+		<div class="about" id="about">
+			<h2>About</h2>
+			<p>As part of its celebrations of 100 years of film in America, the <a href="http://www.afi.com/default.aspx" target="_blank">American Film Institute</a> released a list of the top 100 greatest movies. The husband-and-wife team that brought you <a href="http://thedisneyproject.wordpress.com/" target="_blank">The Disney Project</a> is now working through that list. Follow along as we make our way through the (<a href="http://www.afi.com/100years/movies10.aspx" target="_blank">updated</a>) list in reverse-chronological order and re-live some of the best movie moments of all time. Each review will, appropriately enough, never exceed 100 words. We hope you enjoy.</p>
+		</div> <!-- /.about -->
+		<div class="contact" id="contact">
+			<h2>Say hello!</h2>
+			<form action="" method="post">
+				<label for="">Name</label>
+				<input type="text" name="">
+
+				<label for="">Email</label>
+				<input type="email" name="">
+
+				<label for="" class="message">Your message</label>
+				<textarea name="" id="" cols="30" rows="10" placeholder="Write your message here ... "></textarea>
+
+				<input type="hidden" id="idstamp" name="idstamp" value="" />
+
+				<input type="submit">
+			</form> <!-- /.form -->
+		</div> <!-- /.contact -->
+		<footer>Made from scratch by <a href="http://danielleawebb.com">Danielle</a> &copy; 2014</footer> <!-- / footer -->
+	</div> <!-- /.sidebar -->
+
+	<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
+	<script src="scripts.js"></script>
+</body>
+</html>

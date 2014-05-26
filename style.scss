@@ -1,0 +1,329 @@
+// *****************
+// PARTIALS
+// *****************
+@import 'basics';
+@import 'colours';
+@import 'typography';
+
+// *****************
+// DEFAULTS
+// *****************
+body { 
+	font-family: $base-font-family;
+	font-weight: $base-font-weight;
+	font-size: $base-font-size;
+	line-height: $base-line-height;
+	letter-spacing: $base-letter-spacing;
+	color: $black;
+	background-color: lighten($bg-colour,5%);
+}
+
+h1,h2,h3,h4,h5,h5 {
+	text-transform: $heading-style;
+	font-weight: $bold;
+}
+
+// *****************
+// CONTENT
+// *****************
+
+.content {
+	background: lighten($primary-colour,60%);
+	float: right;
+	width: 66%;
+	margin-left: 1%;
+}
+
+.movie {
+	width: 10%;
+	padding: 5px;
+	display: inline-block;
+	vertical-align: top;
+}
+
+// *****************
+// MODAL BOX
+// *****************
+
+.modalDialog {
+	position: fixed;
+	top: 0;
+	right: 0;
+	bottom: 0;
+	left: 0;
+	background: rgba(0,0,0,0.8);
+	z-index: -1;
+	opacity:0;
+	-webkit-transition: opacity 400ms ease-in;
+	-moz-transition: opacity 400ms ease-in;
+	transition: opacity 400ms ease-in;
+}
+
+.modalDialog.visible {
+	opacity: 1;
+	z-index: 9999;
+}
+
+a.close {
+	width: 40px;
+	height: 30px;
+	display: block;
+	position: absolute;
+	top: 5px;
+	right: -24px;
+	text-decoration: none;
+	color: black;
+}
+
+.modalWrap {
+	width: 50%;
+	background: white;
+	margin: 0 auto;
+	position: relative;
+	margin-top: 10%;
+	padding: 1%;
+	border-radius: 5px;
+
+	.moviePoster {
+		float: left;
+		width: 20%;
+
+		p.rating {
+			font-size: 10px;
+		}
+	}
+
+	.movieDetails {
+		float: left;
+		width: 78%;
+		padding-left: 2%;
+
+		h3 {
+			margin-top: 0;
+		}
+	}
+}
+
+
+
+
+// *****************
+// STAR RATING
+// *****************
+
+.rateMovie {
+	display: none;
+}
+
+.movie .rateMovie {
+	display: block;
+}
+
+.rateMovie:not(:checked) {
+	float: left;
+
+	label {
+		font-size: 0;
+		cursor: pointer;
+		float: right;
+	}
+
+	input[type="radio"] {
+		display: none;
+	}
+}
+
+.rateMovie:not(:checked) label:before {
+	content : '\2605';
+	font-size: 30px;
+	color: #d4d4d4;
+}
+
+.rateMovie:not(:checked) label:hover:before {
+	color: goldenrod;
+}
+
+	.rateMovie:not(:checked) label:hover ~ label:before {
+		color: goldenrod;
+	}
+
+.rateMovie:not(:checked) input:checked ~ label:before {
+	color: goldenrod;
+}
+
+// *****************
+// SIDEBAR
+// *****************
+.sidebar {
+	float: left;
+	width: 32%;
+}
+
+.header {
+	background: lighten($primary-colour,20%);
+	color: $white;
+	text-align: center;
+	padding: 1%;
+	margin: 5% 0;
+	width: 107%;
+	position: relative;
+	z-index: -1;
+}
+
+h1 {
+	font-size: 67px;
+	letter-spacing: -1px;
+	line-height: 1;
+	margin: 0;
+	word-spacing: -5px;
+
+	span {
+		font-size: 25px;
+		letter-spacing: 2px;
+		word-spacing: 2px;
+	}
+}
+
+h2 {
+	font-size: $heading-font-size;
+	color: $primary-colour;
+}
+
+h2.tagline {
+	color: $white;
+	font-size: $base-font-size;
+	font-weight: $light;
+	padding: 0 2% 2%;
+	margin-top: 1%;
+}
+
+nav {
+	padding-left: 5%;
+	margin-bottom: 92%;
+
+	li {
+		list-style-type: none;
+	}
+
+	a {
+		text-decoration: none;
+		font-size: $small-font-size;
+		line-height: $small-line-height;
+		color: $primary-colour;
+		font-weight: $bold;
+	}
+
+	a:hover {
+		color: $secondary-colour;
+	}
+
+	a:hover:before {
+		content: "› ";
+	}
+}
+
+.about, .contact {
+	margin: 0 5%;
+	font-size: $small-font-size;
+}
+
+.about h2, .contact h2 {
+	color: lighten($primary-colour,20%);
+	margin-bottom: 0;
+}
+
+.about {
+	a {
+		text-decoration: none;
+		font-weight: $bold;
+		color: lighten($primary-colour,20%);
+	}
+
+	a:hover {
+		color: $secondary-colour;
+	}
+}
+
+.contact {
+	clear: both;
+	margin-top: 10%;
+}
+
+form {
+	position: relative;
+
+	label {
+		width: 15%;
+		text-transform: uppercase;
+		float: left;
+		background: lighten($primary-colour,20%);
+		color: $white;
+		margin: 2% 0;
+		padding: 2%;
+		border-radius: 5px 0 0 5px;
+	}
+
+	label.message {
+		display: none;
+	}
+
+	input {
+		width: 85%;
+		float: right;
+		border-radius: 0 5px 5px 0;
+		background: darken($bg-colour,1%);
+		border: none;
+		margin: 2% 0;
+		padding: 2%;
+	}
+
+	input:focus {
+		color: $black;
+		background: lighten($black,60%);
+		outline: none;
+	}
+
+	textarea {
+		@extend input;
+		width: 100%;
+		float: none;
+		border-radius: 0;
+	}
+
+	textarea::-webkit-input-placeholder {
+		color: $black;
+	}
+
+	input[type=submit] {
+		@extend label;
+		float: right;
+		border-radius: 0;
+		width: 20%;
+		padding: 2% 4%;
+		position: absolute;
+		bottom: 0;
+		right: 0;
+	}
+
+	input[type=submit]:hover {
+		background: $primary-colour;
+	}
+}
+
+footer {
+	clear: both;
+	text-align: center;
+	font-size: 12px;
+	margin: 5% 0 2% 0;
+	color: lighten($primary-colour,20%);
+
+	a {
+		text-decoration: none;
+		font-weight: $bold;
+		color: lighten($primary-colour,20%);
+	}
+
+	a:hover {
+		color: $secondary-colour;
+	}
+}

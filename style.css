@@ -1,0 +1,454 @@
+@charset "UTF-8";
+article, aside, details, figcaption, figure, footer, header, hgroup, nav, section, summary {
+  display: block;
+}
+
+audio, canvas, video {
+  display: inline-block;
+}
+
+audio:not([controls]) {
+  display: none;
+  height: 0;
+}
+
+[hidden] {
+  display: none;
+}
+
+html {
+  font-family: sans-serif;
+  -webkit-text-size-adjust: 100%;
+  -ms-text-size-adjust: 100%;
+}
+
+a:focus {
+  outline: thin dotted;
+}
+
+a:active, a:hover {
+  outline: 0;
+}
+
+h1 {
+  font-size: 2em;
+}
+
+abbr[title] {
+  border-bottom: 1px dotted;
+}
+
+b, strong {
+  font-weight: 700;
+}
+
+dfn {
+  font-style: italic;
+}
+
+mark {
+  background: #ff0;
+  color: #000;
+}
+
+code, kbd, pre, samp {
+  font-family: monospace, serif;
+  font-size: 1em;
+}
+
+pre {
+  white-space: pre-wrap;
+  word-wrap: break-word;
+}
+
+q {
+  quotes: \201C \201D \2018 \2019;
+}
+
+small {
+  font-size: 80%;
+}
+
+sub, sup {
+  font-size: 75%;
+  line-height: 0;
+  position: relative;
+  vertical-align: baseline;
+}
+
+sup {
+  top: -.5em;
+}
+
+sub {
+  bottom: -.25em;
+}
+
+img {
+  border: 0;
+}
+
+svg:not(:root) {
+  overflow: hidden;
+}
+
+fieldset {
+  border: 1px solid silver;
+  margin: 0 2px;
+  padding: .35em .625em .75em;
+}
+
+button, input, form textarea, select, textarea {
+  font-family: inherit;
+  font-size: 100%;
+  margin: 0;
+}
+
+button, input, form textarea {
+  line-height: normal;
+}
+
+button, html input[type=button], html form textarea[type=button], form html textarea[type=button],
+input[type=reset],
+form textarea[type=reset], input[type=submit], form textarea[type=submit] {
+  -webkit-appearance: button;
+  cursor: pointer;
+}
+
+button[disabled], input[disabled], form textarea[disabled] {
+  cursor: default;
+}
+
+input[type=checkbox], form textarea[type=checkbox], input[type=radio], form textarea[type=radio] {
+  box-sizing: border-box;
+  padding: 0;
+}
+
+input[type=search], form textarea[type=search] {
+  -webkit-appearance: textfield;
+  -moz-box-sizing: content-box;
+  -webkit-box-sizing: content-box;
+  box-sizing: content-box;
+}
+
+input[type=search]::-webkit-search-cancel-button, form textarea[type=search]::-webkit-search-cancel-button, input[type=search]::-webkit-search-decoration, form textarea[type=search]::-webkit-search-decoration {
+  -webkit-appearance: none;
+}
+
+textarea {
+  overflow: auto;
+  vertical-align: top;
+}
+
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+body, figure {
+  margin: 0;
+}
+
+legend, button::-moz-focus-inner, input::-moz-focus-inner, form textarea::-moz-focus-inner {
+  border: 0;
+  padding: 0;
+}
+
+.clearfix:after {
+  content: " ";
+  visibility: hidden;
+  display: block;
+  height: 0;
+  clear: both;
+}
+
+*, *:before, *:after {
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+}
+
+img {
+  width: 100%;
+}
+
+body {
+  font-family: "Open Sans", sans-serif;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 1.4;
+  letter-spacing: 1px;
+  color: #423f37;
+  background-color: #fffde7;
+}
+
+h1, h2, h3, h4, h5, h5 {
+  text-transform: uppercase;
+  font-weight: 600;
+}
+
+.content {
+  background: #cee2e2;
+  float: right;
+  width: 66%;
+  margin-left: 1%;
+}
+
+.movie {
+  width: 10%;
+  padding: 5px;
+  display: inline-block;
+  vertical-align: top;
+}
+
+.modalDialog {
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  background: rgba(0, 0, 0, 0.8);
+  z-index: -1;
+  opacity: 0;
+  -webkit-transition: opacity 400ms ease-in;
+  -moz-transition: opacity 400ms ease-in;
+  transition: opacity 400ms ease-in;
+}
+
+.modalDialog.visible {
+  opacity: 1;
+  z-index: 9999;
+}
+
+a.close {
+  width: 40px;
+  height: 30px;
+  display: block;
+  position: absolute;
+  top: 5px;
+  right: -24px;
+  text-decoration: none;
+  color: black;
+}
+
+.modalWrap {
+  width: 50%;
+  background: white;
+  margin: 0 auto;
+  position: relative;
+  margin-top: 10%;
+  padding: 1%;
+  border-radius: 5px;
+}
+.modalWrap .moviePoster {
+  float: left;
+  width: 20%;
+}
+.modalWrap .moviePoster p.rating {
+  font-size: 10px;
+}
+.modalWrap .movieDetails {
+  float: left;
+  width: 78%;
+  padding-left: 2%;
+}
+.modalWrap .movieDetails h3 {
+  margin-top: 0;
+}
+
+.rateMovie {
+  display: none;
+}
+
+.movie .rateMovie {
+  display: block;
+}
+
+.rateMovie:not(:checked) {
+  float: left;
+}
+.rateMovie:not(:checked) label, .rateMovie:not(:checked) form input[type=submit], form .rateMovie:not(:checked) input[type=submit], .rateMovie:not(:checked) form textarea[type=submit], form .rateMovie:not(:checked) textarea[type=submit] {
+  font-size: 0;
+  cursor: pointer;
+  float: right;
+}
+.rateMovie:not(:checked) input[type="radio"], .rateMovie:not(:checked) form textarea[type="radio"], form .rateMovie:not(:checked) textarea[type="radio"] {
+  display: none;
+}
+
+.rateMovie:not(:checked) label:before, .rateMovie:not(:checked) form input[type=submit]:before, form .rateMovie:not(:checked) input[type=submit]:before, .rateMovie:not(:checked) form textarea[type=submit]:before, form .rateMovie:not(:checked) textarea[type=submit]:before {
+  content: '\2605';
+  font-size: 30px;
+  color: #d4d4d4;
+}
+
+.rateMovie:not(:checked) label:hover:before, .rateMovie:not(:checked) form input[type=submit]:hover:before, form .rateMovie:not(:checked) input[type=submit]:hover:before, .rateMovie:not(:checked) form textarea[type=submit]:hover:before, form .rateMovie:not(:checked) textarea[type=submit]:hover:before {
+  color: goldenrod;
+}
+
+.rateMovie:not(:checked) label:hover ~ label:before, .rateMovie:not(:checked) form input[type=submit]:hover ~ label:before, form .rateMovie:not(:checked) input[type=submit]:hover ~ label:before, .rateMovie:not(:checked) form textarea[type=submit]:hover ~ label:before, form .rateMovie:not(:checked) textarea[type=submit]:hover ~ label:before, .rateMovie:not(:checked) form label:hover ~ input[type=submit]:before, form .rateMovie:not(:checked) label:hover ~ input[type=submit]:before, .rateMovie:not(:checked) form input[type=submit]:hover ~ input[type=submit]:before, form .rateMovie:not(:checked) input[type=submit]:hover ~ input[type=submit]:before, .rateMovie:not(:checked) form textarea[type=submit]:hover ~ input[type=submit]:before, form .rateMovie:not(:checked) textarea[type=submit]:hover ~ input[type=submit]:before, .rateMovie:not(:checked) form label:hover ~ textarea[type=submit]:before, form .rateMovie:not(:checked) label:hover ~ textarea[type=submit]:before, .rateMovie:not(:checked) form input[type=submit]:hover ~ textarea[type=submit]:before, form .rateMovie:not(:checked) input[type=submit]:hover ~ textarea[type=submit]:before, .rateMovie:not(:checked) form textarea[type=submit]:hover ~ textarea[type=submit]:before, form .rateMovie:not(:checked) textarea[type=submit]:hover ~ textarea[type=submit]:before {
+  color: goldenrod;
+}
+
+.rateMovie:not(:checked) input:checked ~ label:before, .rateMovie:not(:checked) form textarea:checked ~ label:before, form .rateMovie:not(:checked) textarea:checked ~ label:before, .rateMovie:not(:checked) form input:checked ~ input[type=submit]:before, form .rateMovie:not(:checked) input:checked ~ input[type=submit]:before, .rateMovie:not(:checked) form textarea:checked ~ input[type=submit]:before, form .rateMovie:not(:checked) textarea:checked ~ input[type=submit]:before, .rateMovie:not(:checked) form input:checked ~ textarea[type=submit]:before, form .rateMovie:not(:checked) input:checked ~ textarea[type=submit]:before, .rateMovie:not(:checked) form textarea:checked ~ textarea[type=submit]:before, form .rateMovie:not(:checked) textarea:checked ~ textarea[type=submit]:before {
+  color: goldenrod;
+}
+
+.sidebar {
+  float: left;
+  width: 32%;
+}
+
+.header {
+  background: #558f8f;
+  color: white;
+  text-align: center;
+  padding: 1%;
+  margin: 5% 0;
+  width: 107%;
+  position: relative;
+  z-index: -1;
+}
+
+h1 {
+  font-size: 67px;
+  letter-spacing: -1px;
+  line-height: 1;
+  margin: 0;
+  word-spacing: -5px;
+}
+h1 span {
+  font-size: 25px;
+  letter-spacing: 2px;
+  word-spacing: 2px;
+}
+
+h2 {
+  font-size: 20px;
+  color: darkslategrey;
+}
+
+h2.tagline {
+  color: white;
+  font-size: 16px;
+  font-weight: 300;
+  padding: 0 2% 2%;
+  margin-top: 1%;
+}
+
+nav {
+  padding-left: 5%;
+  margin-bottom: 92%;
+}
+nav li {
+  list-style-type: none;
+}
+nav a {
+  text-decoration: none;
+  font-size: 14px;
+  line-height: 1;
+  color: darkslategrey;
+  font-weight: 600;
+}
+nav a:hover {
+  color: orangered;
+}
+nav a:hover:before {
+  content: "› ";
+}
+
+.about, .contact {
+  margin: 0 5%;
+  font-size: 14px;
+}
+
+.about h2, .contact h2 {
+  color: #558f8f;
+  margin-bottom: 0;
+}
+
+.about a {
+  text-decoration: none;
+  font-weight: 600;
+  color: #558f8f;
+}
+.about a:hover {
+  color: orangered;
+}
+
+.contact {
+  clear: both;
+  margin-top: 10%;
+}
+
+form {
+  position: relative;
+}
+form label, form input[type=submit], form textarea[type=submit] {
+  width: 15%;
+  text-transform: uppercase;
+  float: left;
+  background: #558f8f;
+  color: white;
+  margin: 2% 0;
+  padding: 2%;
+  border-radius: 5px 0 0 5px;
+}
+form label.message, form input.message[type=submit], form textarea.message[type=submit] {
+  display: none;
+}
+form input, form textarea {
+  width: 85%;
+  float: right;
+  border-radius: 0 5px 5px 0;
+  background: #fff9c8;
+  border: none;
+  margin: 2% 0;
+  padding: 2%;
+}
+form input:focus, form textarea:focus {
+  color: #423f37;
+  background: #d9d7d2;
+  outline: none;
+}
+form textarea {
+  width: 100%;
+  float: none;
+  border-radius: 0;
+}
+form textarea::-webkit-input-placeholder {
+  color: #423f37;
+}
+form input[type=submit], form textarea[type=submit] {
+  float: right;
+  border-radius: 0;
+  width: 20%;
+  padding: 2% 4%;
+  position: absolute;
+  bottom: 0;
+  right: 0;
+}
+form input[type=submit]:hover, form textarea[type=submit]:hover {
+  background: darkslategrey;
+}
+
+footer {
+  clear: both;
+  text-align: center;
+  font-size: 12px;
+  margin: 5% 0 2% 0;
+  color: #558f8f;
+}
+footer a {
+  text-decoration: none;
+  font-weight: 600;
+  color: #558f8f;
+}
+footer a:hover {
+  color: orangered;
+}
